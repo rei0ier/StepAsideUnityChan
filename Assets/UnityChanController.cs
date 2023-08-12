@@ -8,7 +8,8 @@ public class UnityChanController : MonoBehaviour
     private Animator myAnimator;
     //Unityちゃんを移動させるコンポーネントを入れる（追加）
     private Rigidbody myRigidbody;
-    //全方向の速度（追加）
+
+    //前方向の速度（追加）
     private float velocityZ = 16f;
 
 
@@ -18,11 +19,12 @@ public class UnityChanController : MonoBehaviour
         //Animatorコンポーネントを取得
         this.myAnimator = GetComponent<Animator>();
 
-        //走るアニメーション
+        //走るアニメーションを開始
         this.myAnimator.SetFloat("Speed", 1);
 
         //Rigidbodyコンポーネントを取得（追加）
         this.myRigidbody = GetComponent<Rigidbody>();
+
     }
 
     // Update is called once per frame
