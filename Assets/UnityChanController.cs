@@ -17,6 +17,10 @@ public class UnityChanController : MonoBehaviour
     private float velocityY = 10f;
     //左右の移動できる範囲
     private float movableRange = 3.4f;
+    //動きを減速させる係数
+    private float coefficient = 0.99f;
+    //ゲーム終了の判定
+    private bool isEnd = false;
 
     // Start is called before the first frame update
     void Start()
@@ -35,6 +39,15 @@ public class UnityChanController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //ゲーム終了ならUnityちゃんの動きを減衰する
+        if (this.isEnd)
+        {
+            this.velocityZ *= this.coefficient;
+            this.velocityX *= this.coefficient;
+            this.velocityY *= this.coefficient;
+            this.myAnimator.speed *= this.coefficient;
+        }
+
         //横方向の入力による速度
         float inputVelocityX = 0;
         //上方向の入力による速度
@@ -74,5 +87,26 @@ public class UnityChanController : MonoBehaviour
         //Unityちゃんに速度を与える
         this.myRigidbody.velocity = new Vector3(inputVelocityX, inputVelocityY, velocityZ);
 
+    }
+    //トリガーモードで他のオブジェクトと接触した場合の処理
+    void OnTriggerEnter(Collider other)
+    {
+        //障害物に衝突した場合
+        if (other.gameObject.tag == "CarTag" || other.gameObject.tag == "TrafficConeTag")
+        {
+            this.isEnd = true;
+        }
+        //ゴール地点に到達した場合
+        if (other.gameObject.tag == "goalTag")
+        {
+            this.isEnd = true;
+        }
+
+        //コインに衝突した場合
+        if (other.gameObject.tag == "CoinTag")
+        {
+            //接触したコインのオブジェクトを破棄
+            Destroy(other.gameObject);
+        }
     }
 }
