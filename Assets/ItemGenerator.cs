@@ -27,6 +27,7 @@ public class ItemGenerator : MonoBehaviour
     {
         //一定の距離ごとにアイテムを生成
         for (int i = startPos; i < goalPos; i += 15)
+
         {
             //どのアイテムを出すのかをランダムに設定
             int num = Random.Range(1, 11);
@@ -42,7 +43,7 @@ public class ItemGenerator : MonoBehaviour
             else
             {
                 //レーンごとにアイテムを生成
-                for (int j = -1; j < -1; j++)
+                for (int j = -1; j < 1; j++)
                 {
                     //アイテムの種類を決める
                     int item = Random.Range(1, 11);
