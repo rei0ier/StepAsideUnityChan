@@ -35,6 +35,7 @@ public class UnityChanController : MonoBehaviour
     //ジャンプボタン押下の判定
     private bool isJButtonDown = false;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -171,4 +172,5 @@ public class UnityChanController : MonoBehaviour
     {
         this.isRButtonDown = false;
     }
+
 }
