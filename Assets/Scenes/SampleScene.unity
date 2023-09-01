@@ -5899,9 +5899,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c12c1acaed7640888b2e1d3744fe51d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  carPrefab: {fileID: 5423283674264912282, guid: a5c022f37a18e4464acfc79aa3e1a598, type: 3}
-  coinPrefab: {fileID: 7711561221825010072, guid: dcd02e6d40c4244da8869bdaaf2b0792, type: 3}
-  conePrefab: {fileID: 68541171128638303, guid: 73dcfd225e85f4cc8b2edd6c9a08d664, type: 3}
   MainCamera: {fileID: 963194227}
 --- !u!4 &892746252
 Transform:

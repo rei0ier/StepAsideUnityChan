@@ -38,6 +38,7 @@ public class ItemGenerator : MonoBehaviour
                 {
                     GameObject cone = Instantiate(conePrefab);
                     cone.transform.position = new Vector3(4 * j, cone.transform.position.y, i);
+
                 }
             }
             else
@@ -62,10 +63,12 @@ public class ItemGenerator : MonoBehaviour
                         //車を生成
                         GameObject car = Instantiate(carPrefab);
                         car.transform.position = new Vector3(posRange * j, car.transform.position.y, i + offsetZ);
+
                     }
                 }
             }
         }
+
     }
 
     // Update is called once per frame
