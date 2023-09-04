@@ -23,20 +23,20 @@ public class ItemManager : MonoBehaviour
         GameObject[] coin = GameObject.FindGameObjectsWithTag("CoinTag");
         GameObject[] cone = GameObject.FindGameObjectsWithTag("TrafficConeTag");
 
-        // 各オブジェクトの位置をチェックして画面下から出たら破棄
-        CheckAndDestroyItems(car);
-        CheckAndDestroyItems(coin);
-        CheckAndDestroyItems(cone);
+        //オブジェクトの位置をチェックして画面下から出たら破棄する
+        DestroyItems(car);
+        DestroyItems(coin);
+        DestroyItems(cone);
 
     }
-    private void CheckAndDestroyItems(GameObject[] items)
+    private void DestroyItems(GameObject[] items)
     {
         foreach (var item in items)
         {
-            // アイテムの位置をビューポート座標に変換
+            //アイテムの位置をビューポート座標に変換
             Vector3 viewportPosition = MainCamera.WorldToViewportPoint(item.transform.position);
 
-            // 画面下から出たら破棄
+            //画面下から出たら破棄
             if (viewportPosition.y < 0)
             {
                 Destroy(item);
