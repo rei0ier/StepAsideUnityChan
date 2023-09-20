@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class ItemGenerator : MonoBehaviour
 {
+    //unityちゃん
+    private GameObject unitychan;
+
     //carPrefab
     public GameObject carPrefab;
 
@@ -25,8 +28,27 @@ public class ItemGenerator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //unityちゃんのオブジェクト取得
+        unitychan = GameObject.Find("unitychan");
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        //unityちゃんの位置
+        float unitychanPosZ = unitychan.transform.position.z;
+
+        if(unitychanPosZ + 40 > startPos && unitychanPosZ < 310)
+        {
+            GenerateItems(startPos, startPos + 15);
+            startPos += 15;
+        }
+    }
+    //アイテム生成
+    private void GenerateItems(int startPos,int endPos)
+    {
         //一定の距離ごとにアイテムを生成
-        for (int i = startPos; i < goalPos; i += 15)
+        for (int i = startPos; i < endPos; i += 15)
 
         {
             //どのアイテムを出すのかをランダムに設定
@@ -68,12 +90,5 @@ public class ItemGenerator : MonoBehaviour
                 }
             }
         }
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

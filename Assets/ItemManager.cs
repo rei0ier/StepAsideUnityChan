@@ -5,7 +5,7 @@ using UnityEngine;
 public class ItemManager : MonoBehaviour
 {
 
-    //カメラの位置を参照する
+    //カメラ
     public Camera MainCamera;
     
     // Start is called before the first frame update

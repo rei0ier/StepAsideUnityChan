@@ -16,7 +16,7 @@ public class MyCameraController : MonoBehaviour
         //Unityちゃんのオブジェクトを取得
         this.unitychan = GameObject.Find("unitychan");
 
-        //Unityちゃんとカメラの位置（z座標）のさを決める
+        //Unityちゃんとカメラの位置（z座標）のさを求める
         this.difference = unitychan.transform.position.z - this.transform.position.z;
 
     }

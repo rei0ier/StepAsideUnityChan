@@ -152,7 +152,7 @@ public class UnityChanController : MonoBehaviour
     {
         this.isJButtonDown = false;
     }
-    //左ボタンを押した場合の処理
+    //左ボタンを押し続けた場合の処理
     public void GetMyLeftButtonDown()
     {
         this.isLButtonDown = true;
@@ -162,7 +162,7 @@ public class UnityChanController : MonoBehaviour
     {
         this.isLButtonDown = false;
     }
-    //右ボタンを押した場合の処理
+    //右ボタンを押し続けた場合の処理
     public void GetMyRigthButtonDown()
     {
         this.isRButtonDown = true;
