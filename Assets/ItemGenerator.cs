@@ -49,7 +49,6 @@ public class ItemGenerator : MonoBehaviour
     {
         int i = startPos;
 
-        //一定の距離ごとにアイテムを生成
         //どのアイテムを出すのかをランダムに設定
         int num = Random.Range(1, 11);
         if (num <= 2)
